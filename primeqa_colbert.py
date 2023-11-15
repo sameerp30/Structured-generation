@@ -11,11 +11,12 @@ import pandas as pd
 import numpy as np
 import torch
 from IPython.display import display, HTML
+from datasets import load_dataset,  concatenate_datasets
 
 os.environ["MASTER_ADDR"] = "localhost"
 os.environ["MASTER_PORT"] = "29500"
 
-random_seed = 2 # or any of your favorite number 
+random_seed = 2
 torch.manual_seed(random_seed)
 torch.cuda.manual_seed(random_seed)
 torch.backends.cudnn.deterministic = True
@@ -23,74 +24,39 @@ torch.backends.cudnn.benchmark = False
 np.random.seed(random_seed)
 
 
-text_triples_fn  = '/home1/tejomay/NL2bash/train_sbert_triples.tsv'
-model_type = 'roberta-base'
-with tempfile.TemporaryDirectory() as working_dir:
-    output_dir=os.path.join(working_dir, 'output_dir')
+# path for index file
+collection_fn = '/raid/nlp/sameer/NL2bash/colbert_tsv_files/index_descriptions_examples.tsv'
 
-data = pd.read_csv(text_triples_fn, sep='\t', header=None)
-
-print
-
-data = data.drop([0], axis=1)
-data.rename(columns = {1:0, 2:1, 3:2}, inplace = True)
-
-print("printing output dir: ",output_dir)
 args_dict = {
-                'root': output_dir,
-                'experiment': 'test_training',
-                'triples': text_triples_fn,
-                'model_type': model_type,
-                'bsize': 16,
-                'epochs': 3,
-                'nranks': 1,
-                'amp' : True,
-                # 'lr' : 3e-5
-            }
-
-with Run().context(RunConfig(root=args_dict['root'], experiment=args_dict['experiment'], nranks=args_dict['nranks'], amp=args_dict['amp'])):
-    colBERTConfig = ColBERTConfig(**args_dict)
-    latest_model_fn = train(colBERTConfig, text_triples_fn, None, None)
-
-collection_fn = '/home1/tejomay/NL2bash/index_descriptions.tsv'
-
-data = pd.read_csv(collection_fn, sep='\t')
-
-print(data.head(3))
-print("---------------------------")
-args_dict = {
-                'root': os.path.join(output_dir,'test_indexing'),
+                'root': os.path.join("/tmp/tmphdtvb4y3/output_dir",'test_indexing'),
                 'experiment': 'test_indexing',
-                'checkpoint': latest_model_fn,
+                'checkpoint': "/tmp/tmphdtvb4y3/output_dir/test_training/2023-11/15/13.34.02/checkpoints/colbert-LAST.dnn",
                 'collection': collection_fn,
-                'index_root': os.path.join(output_dir, 'test_indexing', 'indexes'),
+                'index_root': os.path.join("/tmp/tmphdtvb4y3/output_dir", 'test_indexing', 'indexes'),
                 'index_name': 'index_name',
-                'doc_maxlen': 180,
-                'num_partitions_max': 2,
-                'kmeans_niters': 1,
-                'nway': 1,
-                'rank': 0,
+                'model_type': 'roberta-base',
                 'nranks': 1,
                 'amp' : True,
             }
 
+# run indexing step
 with Run().context(RunConfig(root=args_dict['root'], experiment=args_dict['experiment'], nranks=args_dict['nranks'], amp=args_dict['amp'])):
     colBERTConfig = ColBERTConfig(**args_dict)
     create_directory(colBERTConfig.index_path_)
     encode(colBERTConfig, collection_fn, None, None)
 
-queries_fn = "/home1/tejomay/NL2bash/queries.tsv"
+# path for queries (retrieval step)
+queries_fn = "/raid/nlp/sameer/NL2bash/colbert_tsv_files/queries.tsv"
 
 args_dict = {
-                'root': output_dir,
+                'root': "/tmp/tmphdtvb4y3/output_dir",
                 'experiment': 'test_indexing' ,
-                'checkpoint': latest_model_fn,
-                'model_type': model_type,
-                'index_location': os.path.join(output_dir, 'test_indexing', 'indexes', 'index_name'),
+                'checkpoint': "/tmp/tmphdtvb4y3/output_dir/test_training/2023-11/15/13.34.02/checkpoints/colbert-LAST.dnn",
+                'model_type': 'roberta-base',
+                'index_location': os.path.join("/tmp/tmphdtvb4y3/output_dir", 'test_indexing', 'indexes', 'index_name'),
                 'queries': queries_fn,
                 'bsize': 1,
-                'topK': 3,
-                'nway': 1,
+                'topK': 5, # retrieve top 5 hits
                 'rank': 0,
                 'nranks': 1,
                 'amp': True,
@@ -101,7 +67,7 @@ with Run().context(RunConfig(root=args_dict['root'], experiment=args_dict['exper
     searcher = Searcher(args_dict['index_location'], checkpoint=args_dict['checkpoint'], config=colBERTConfig)
     rankings = searcher.search_all(args_dict['queries'], args_dict['topK'])
 
-rankings.flat_ranking[0]
+print(rankings.flat_ranking[:10])
 
 with open(queries_fn, 'r') as f:
     for line in f.readlines():
@@ -112,3 +78,40 @@ with open(collection_fn, 'r') as f:
     for line in f.readlines():
         if str(rankings.flat_ranking[0][1]) == line.split()[0]:
             print(line)
+
+"""Below steps are for evaluation or calculating accuracy of top 5 retrieval. 
+All the retrieval results are stored in rankings.flat_ranking as a list of tuples. Each tuple has following format
+(query-id, retrived doc-index, rank, score)"""
+
+# store the mapping of index to text
+f = open(collection_fn, 'r')
+descriptions = f.readlines()
+
+index2text = {}
+for line in descriptions:
+    index2text[line.split("\t")[0]] = line.split("\t")[2]
+
+# for each query store title of top 5 retrieved documents
+mapping = {}
+for tup in rankings.flat_ranking:
+    if tup[0] not in mapping:
+        mapping[tup[0]] =  []
+    if tup[1] == '0':
+        continue
+    mapping[tup[0]].append(index2text[str(tup[1])].strip())   # here error occurs. as tuple tup consist of retrived document with index 0. But no such document exists.
+
+tldr = load_dataset("neulab/tldr")
+tldr_train_test = concatenate_datasets([tldr['train'], tldr['test']])
+ds = tldr_train_test.train_test_split(test_size=0.15, seed=4)
+ds["test"] = ds["test"].filter(lambda example: example["cmd_name"] in ds["train"]["cmd_name"])
+print("length of train set is: ", len(ds["train"]))
+print("length of test set: ", len(ds["test"]))
+
+tldr_train, tldr_val = ds["train"], ds["test"]
+
+cnt = 0
+for i in range(0,len(tldr_val)):
+    if tldr_val[i]["cmd_name"] in mapping[str(i+1)]:
+        cnt += 1
+
+print(cnt/len(tldr_val))
