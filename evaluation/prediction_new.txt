@@ -1,0 +1,1081 @@
+twm --file {{path/to/file}}
+git-info --no-config
+git effort {{author}}
+btrfs filesystem scan
+column --output-width {{columns}}
+gtop --help-sort
+whiptail --title "{{title}}" --passwordbox "{{message}}" {{height_in_chars}} {{width_in_chars}}
+timew stop {{tag}}
+drill {{example.com}}
+rbenv versions
+git bundle validate {{path/to/file.bundle}}
+mplayer -i {{audio_file}}
+bastet --move {{window_title}}
+diff {{file1}} {{file2}}
+sinfo --list-reasons
+cloc --progress-rate {{path/to/directory}}
+bg %{{job_id}}
+pio test
+tshark {{host}}
+tic -e {{path/to/terminfo}} {{path/to/file}}
+chown --reference={{path/to/reference_file}} {{path/to/file_or_directory}}
+bssh --domain={{domain}}
+hg commit --include {{path/to/file}}
+flameshot full
+latexmk -t -p -halt-on-error {{source.tex}}
+git switch {{branch_name}}
+copyq --session-history --session-limit {{3}}
+runuser {{user}} -c '{{command}}'
+du -m {{path/to/directory}}
+cheat -e {{cheat_sheet}} {{command}}
+tmux ls
+whereis -u -m *
+git tag --list
+sudo env -i {{root}}
+git commit-tree {{tree}} -S -m "{{message}}" -F {{path/to/signature}}
+unzip -l
+git replace --no-replace-objects {{object}} {{replacement}}
+sam deploy
+pip3 install {{package_name}}=={{package_version}}
+pio project init --board {{board_id}}
+csvsql {{data.csv}}
+ipcmk --shmem {{segment_size_in_bytes}}
+exiftool "-DateTimeOriginal {{0.5}}h" {{path/to/image.jpg}}
+sdiff {{path/to/file1}} {{path/to/file2}}
+lilypond -o {{path/to/output_file}} {{path/to/file}}
+meshlabserver -i {{input.wrl}} -o {{output.off}} -s {{scale}} -m {{mirror}}
+mke2fs -L {{volume_label}} {{/dev/sdXN}}
+iex -S -c "{{command}}"
+magick {{*.jpg}} +adjoin {{page-%d.pdf}} +adjoin {{page-%d.jpg}}
+q "SELECT * from {{path/to/file1}} {{path/to/file2}}" -d {{delimiter}}
+go env {{GOBIN}}
+realpath --no-symlinks {{path/to/file_or_directory}}
+fold -w5 {{file}}
+batch -c {{command}}
+git rev-list {{commit}}
+mvn clean package -P{{profile}}
+strace -p {{pid}}
+fallocate --length {{50M}} --offset 0 {{path/to/file}}
+sm -i "{{Hello World!}}"
+ip rule get {{default|host|link}}
+flashrom -p {{programmer}} --write {{path/to/file}}
+gh run view --version
+git bisect {{commit_hash_1}}..{{commit_hash_2}}
+doas -u {{user}} {{command}}
+rails new "{{project_name}}"
+wall {{message}}
+exiftool -remove-all {{path/to/file1.jpg}} {{path/to/file2.jpg}}
+topydo add "water flowers due:{{mon}} rec:{{1w}}"
+du -B {{unit}} {{path/to/directory}}
+mtr -w {{0.5}} {{host}}
+graphml2gv > {{path/to/output.gv}} {{path/to/input.gml}}
+column --fillrows {{file}}
+sn -k {{path/to/private_key.snk}} {{path/to/assembly.exe}}
+shasum --check --quiet {{path/to/file}}
+hostnamectl set-hostname --static {{hostname}}
+pmount -r {{/dev/cdrom}}
+sudo --login --user={{user}}
+bootctl status
+sort --numeric-sort {{path/to/file}}
+perl -p0e 's/{{foo\nbar}}/{{foobar}}/g' {{filename}}
+cmake --build {{path/to/build_directory}} --target {{Release}}
+shellcheck {{path/to/script.sh}}
+rustc -O {{file.rs}}
+nmtui connect {{network_name}}
+codespell --ignore-words {{word1,word2,...}}
+gocryptfs --reverse {{path/to/plain_dir}} {{path/to/cipher_dir}}
+env -i {{variable1}}={{value1}} {{variable2}}={{value2}} {{program}}
+docker-machine create --driver {{driver_name}} {{machine_name}}
+monodevelop --new-window {{url}}
+git lfs install --url {{https://example.com/project}}
+gh config set editor {{vi}}
+mosh {{username}}@{{remote_host}} {{command}}
+trap {{SIGHUP}} {{SIGHDOWN}} {{SIGINT}} {{SIGKILL}} {{SIGUSR1}} {{SIGUSR2}} {{SIGSTOP}}
+compgen -c
+git rev-list --tags --ancestry-path {{commit}}
+udevadm monitor
+makensis -W3 {{path/to/file.nsi}}
+gh pr create --web
+monodis --assemblyref {{path/to/assembly.exe}}
+grep --with-filename --line-number "{{search_pattern}}" {{path/to/file}}
+phpmd --reportfile {{path/to/report_file}} list
+notify-send -i {{icon}} "{{Test}}" "{{This is a test}}"
+autorandr -s {{profile_name}}
+pdffonts -opw {{password}} {{path/to/file.pdf}}
+pio platform install {{platform}}
+hydra -L {{path/to/usernames.txt}} -P {{path/to/wordlist.txt}} -M {{path/to/mysql.hydra}} -F {{mysql_user}} -f {{password}}
+rails destroy lib
+dpkg-deb --contents {{path/to/file.deb}}
+fastboot bootctl list
+sha256sum {{path/to/file}} > {{path/to/file.sha256}}
+dfc -t {{ext}}
+trash -v
+Rscript -e "{{expression}}"
+lrunzip -d {{filename.lrz}} -p:{{path/to/output.exe}}
+arp-scan -t {{3}}
+unshadow -b {{path/to/password_file}} {{path/to/shadow_file}} {{path/to/output_file}}
+bundle exec {{command}}
+calendar -A {{30}}
+trash {{path/to/file_or_directory}}
+ctr containers list
+go test -v
+wasm2c {{path/to/file.wasm}} -o {{path/to/output_file.c}}
+ip rule add from {{192.168.178.2/32}}
+git show-index --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-format={{sha1|sha256|sha512}} --object-forma
+install -m {{+x}} {{path/to/source}} {{path/to/destination}}
+taskset --cpu-list {{cpu_id}} {{command}}
+gimp --console-messages --no-splash
+npm list {{module_name}}
+sha384sum {{path/to/file1}} {{path/to/file2}}
+linkchecker --ignore-urls "{{regular_expression}}" {{url}}
+chrt --all-tasks {{pid}}
+pio update --agent {{agent_name}}
+pdffonts {{path/to/file.pdf}}
+virsh save {{config_file.xml}}
+gunicorn --workers {{4}} {{import.path:app_object}}
+diff3 {{file1}} {{file2}} {{file3}}
+hugo --destination {{path/to/destination}} --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInfo --enableGitInf
+pio lib stats
+electrum listunspent -a
+hg add --exclude {{pattern}}
+dockerd --host {{unix|tcp}}:{{2377}}
+lvdisplay {{volume_group}}
+hg remove --include {{pattern}}
+umount {{path/to/mount_point}}
+lsd -d {{*/}}
+gobuster fuzz --url {{https://example.com/?FUZZ=value}} --wordlist {{path/to/file}}
+flake8 --format {{path/to/file_or_directory}}
+chattr -R {{path/to/directory}}
+testssl --show-each {{example.com}}
+gcov --all-blocks {{path/to/file.cpp}}
+oc rsh {{pod_name}}
+fakeroot -i {{path/to/file}} {{command}}
+multitail -Q 1 '{{pattern}}'
+openfortivpn --username={{username}} --password={{password}} --trusted-cert={{path/to/file}}
+patch -R < {{patch.diff}}
+sha224sum --check {{path/to/file.md5}}
+tomb close
+transmission-cli --blocklist {{path/to/blocklist.txt}} {{url|magnet|path/to/file}}
+pio lib add {{library_name}} {{path/to/library}}
+wmctrl -r {{window_title}} -t {{workspace_number}} -f
+pio lib uninstall {{library}}
+latexmk -p -f {{source.tex}}
+halt --reboot
+git mergetool --tool-help
+sh -x
+black --quiet {{path/to/file_or_directory}}
+protoc --java_out={{path/to/output_directory}} {{input_file.proto}}
+doas -s {{command}}
+debuild --no-tgz-check
+awk '/{{10==x}}/ {print $0}'
+pio test --filter-cache
+checkinstall --install={{path/to/directory}}
+vnstati --hoursgraph --iface {{network_interface}} --output {{path/to/output.png}}
+ldd {{path/to/binary}}
+ansible-vault rekey {{vault_file}} {{password_file}}
+asterisk -r -x "{{command}}"
+docker-machine ls
+nmcli connection add ifname {{interface_name}} type {{ethernet}} ipv6.method {{ignore}} ipv6.address {{ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ffrescan
+godoc {{fmt}} {{printf}}
+dnsrecon --domain {{example.com}} --json
+sshd -D -d -o {{path/to/sshd_logfile}}
+sstat -p
+winetricks {{package}}
+hg init {{name}}
+lsattr -p {{/dev/sdXN}}
+copyq install
+git show-branch {{branch_name}} {{2}}
+sort --unique {{path/to/file}}
+ruby -e {{script.rb}}
+rpm -qa {{package}}
+git reset HEAD~
+drill {{example.com}}
+gh issue list --author {{username}}
+sudo console-lock
+po4a-updatepo --format {{text}} --master-charset {{UTF-8}} --po {{path/to/file1.po}} --po {{path/to/file2.po}} --po {{path/to/file3.po}}
+jc -p {{ifconfig}}
+nmap -p {{port_number}} {{address_or_addresses}}
+rbenv version
+parquet-tools schema {{path/to/parquet}}
+sha384sum --check {{path/to/file.sha384}}
+git add -p
+mssh --alias {{alias_name}}
+yacas -p {{path/to/example.ml}}
+redshift -h {{0.5}}
+latexmk {{source.tex}}
+blkdiscard --secure /dev/{{device}}
+ab -n {{100}} {{url}}
+git root --relative
+rvm --version {{version}}
+lsblk -a
+ninja -C {{path/to/file}}
+mpv --video-output-levels {{device}} {{file}}
+bluetoothd --configfile {{path/to/file}}
+git status -s
+guetzli {{input.jpg}} {{output.jpg}}
+gnome-terminal --command "Super + Shift + {{h|j|k|l}}"
+debugfs -f {{/dev/sdXN}}
+docker service rm {{service_name}}
+jupyter notebook --json
+mkfs -t {{ext2}} {{/dev/sdb7}}
+jigsaw init
+ip route add -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -s {{10.0.0.0}} -
+lilypond --output {{path/to/file.pdf}} {{path/to/file.lilypond}}
+service {{service_name}} --status-all --status-allow --status-all
+gh config set git_protocol {{ssh}}
+hg remove role {{role_name}}
+aria2c --user-agent "{{user_agent}}" --out={{filename}} {{url}}
+reflector --country {{country}}
+bastet {{horizontal}}
+httping -p {{port}}
+feh --no-xinerama {{path/to/images}}
+needrestart -u
+perl rename 's/{{foo}}/{{bar}}/' *.pl
+arping -c {{count}} {{host_1}} {{host_2}}
+rails db:rollback
+curl --header "Accept:application/json" --data-raw '{"hello":"world"}' {{http://example.com}}
+git show-branch --all
+git merge {{branch_name}}
+git secret reveal
+rg {{regular_expression}} {{keyword}}
+screen -X -S {{session_name}} -fullscreen
+zgrep --recursive --include {{pattern}} {{path/to/directory}}
+unzip {{file.zip}}
+rg {{regular_expression}}
+racket --help --help-quiet
+phar info
+pio access public
+doas -u {{user}} {{command}}
+hello --greeting="{{greeting_text}}"
+virsh pool-list --name --uuid --state-shutoff --autostart --pool {{name|uuid}}
+m4 -D {{path/to/file}}
+adduser {{username}}
+tcptraceroute {{host}} -p {{destination_port}}
+bmaptool copy {{source.bmap.gz}} {{/dev/sdb}}
+safe remove {{path/to/secret1 path/to/secret2 ...}}
+git ignore {{file_pattern}}
+lastlog -u {{user}}
+borg extract {{path/to/repo_directory}}::{{Monday}} --exclude {{*.ext}}
+debugfs -R {{/dev/sdXN}}
+pvs -v
+bastet drop
+lsattr -R
+paccache -k {{3}}
+cargo build --package --offline
+speedtest-cli --list
+unset -v {{foo}}
+nslookup -type=AXFR {{example.com}}
+rsync -a {{remote_host}}:{{path/to/remote_file}} {{path/to/local_file}}
+git commit-graph {{path/to/file_or_directory}}
+meson compile -C {{path/to/build_dir}}
+pathchk --portability {{path1 path2 …}}
+dwebp {{path/to/input.webp}} -o {{path/to/output}} -dwebp-no-loop
+elm install {{package_name}}
+dir --all --no-group {{pattern}}
+git help --config={{configuration_set}} {{subcommand}}
+rg --invert-match "{{regular_expression}}" {{path/to/file}}
+httping -g -p {{password}}
+pdfjam {{path/to/file.pdf}} --help-text-pages
+pacman --sync --search "{{search_pattern}}"
+systemctl status {{unit}}
+bssh --shell
+git stash apply {{optional_stash_name}}
+resize2fs -M {{/dev/sdXN}}
+pulseaudio --daemonize
+go test .
+alias {{la}} {{ls -a}}
+fortune -s
+seq -f "%0a" 5 3 20 | xargs -f echo {}
+tmuxinator start {{project}}
+iex -S mix
+git subtree pull --prefix={{path/to/directory/}} {{repository_url}} {{branch_name}}
+autopep8 --check-hash-based-pycs {{path/to/file.py}}
+git commit-graph write
+crunch {{1}} {{1}} -p {{abc}} -m {{5}}
+ping -R {{host}}
+autorandr -c {{profile_name}}
+ctest {{path/to/file}} --output-on-failure
+nproc --all
+linkchecker --check-external {{url}}
+axel -s {{speed}} {{url}}
+hg status --deleted
+ansible-galaxy collection info {{collection_name}}
+pdfseparate {{source.pdf}} {{target_destination.pdf}}
+groups {{username1}} {{username2}}
+git switch --recurse-submodules {{branch_name}}
+fgrep --with-filename --context {{n}} {{search_pattern}} {{path/to/file}}
+nix-collect-garbage --delete-old --dry-run
+screen -S {{session_name}}
+git check-ref-format {{branch_name}} {{tag_name}}
+i3lock -c {{path/to/picture.png}}
+mysqldump --user {{user}} --password {{database_name}} > {{path/to/file.sql}}
+wait {{pid}}
+rustc -g {{file.rs}}
+uvcdynctrl -s {{filename}}
+mkisofs -l {{label}} {{source.iso}} {{destination.iso}}
+lex {{source.c}}
+tune2fs -o {{opt1,opt2,...}} {{/dev/sdXN}}
+solo key wink
+wmctrl -f "{{partial_title}}"
+zsh --no-sh-word-split {{path/to/script.zsh}}
+mingle --variant {{path/to/layout1.gv}} {{path/to/layout2.gv ...}} > {{path/to/output.gv}}
+tsc {{path/to/project}}
+grep --context={{3}} --before-context={{3}} --after-context={{3}} "{{search_pattern}}" {{path/to/file}}
+openconnect --token-secret {{path/to/token_secret}} {{vpn.example.org}}
+wasm2c {{path/to/file.wasm}} -o {{path/to/output_file.c}}
+uvicorn --host {{localhost}} {{import.path:app_object}}
+git create-branch {{branch_name}}
+gdalbuildvrt -hidenodata -vrtnodata "{{0 255 255}}" {{path/to/input_file_1.tif}} {{path/to/input_file_2.tif}} {{path/to/input_file_3.tif}} {{path/to/output.vrt}}
+xsel -cb
+phpcpd {{path/to/file_or_directory}}
+bpytop --min --no-box
+xeyes {{display}}
+unzip -l {{file.zip}}
+lsd -la
+cmark --to html --validate-utf8 {{filename.md}}
+go mod init {{module_name}}
+topydo add {{todo_message}} -T {{project_name}} -T {{context_name}}
+php artisan tinker
+finch {{url|magnet|path/to/file}}
+tput {{setx}} {{x_position}}
+wipefs -a {{/dev/sdX}}
+git bundle show {{path/to/file.bundle}}
+mutool draw -O {{input.pdf}}
+go build -o {{path/to/binary}} {{path/to/source.go}}
+diffoscope --diff-context --diff-context-recursive {{path/to/directory1}} {{path/to/directory2}}
+chown -R {{user}} {{path/to/directory}}
+pacman --upgrades {{path/to/file}}
+esbuild --bundle {{path/to/file.js}}
+ncmpcpp --bindings {{bindings_file}} --config {{config_file}} --help
+taskset --pid --cpu-list {{cpu_id}} sk
+a2enmod --quiet {{module}}
+go clean -c
+chcon -l {{user_name}}_u:{{role_name}}_t:{{domain}} {{filename}}
+kubectl logs --since {{time}} {{pod_name}}
+pyenv versions
+glib-compile-resources --generate-dependencies {{file.gresource.xml}}
+hcitool auth {{bdaddr}}
+csplit {{file}} {{5}} {{23}}
+rails generate controller {{ModelName}} {{action}} {{resource}}
+etcdctl delete {{my/key}}
+semanage booleans -S {{store}}
+calibredb search {{search_term}}
+clang++ -o {{executable}} {{source.cpp}}
+git diff --staged
+lzop -L {{file}}
+git clear-soft --hard
+screenkey --show-settings
+fdp -T {{gif}} -O {{path/to/image.gif}} < {{path/to/input.gv}}
+molecule init role --file {{role_file}}
+transmission-remote {{hostname}} -w {{/path/to/new_directory}} -a {{110}} -l {{1520}}
+hg commit --message {{path/to/message_file}}
+lsd -ltr
+pio app grant {{path/to/manifest}}
+compare {{image1.png}} {{image2.png}} --etric {{metric}}
+cargo rustc --release --lib --profile {{release|debug|profile|bench|cargo-deb}}
+ocaml -i {{path/to/file.ml}}
+pvs -h
+pio repl
+aptitude upgrade
+dpkg-query -s {{package_name}}
+complete -i
+imgp -scale {{75}}x{{height}} {{path/to/source.png}} {{path/to/target.png}}
+login -preserve -f {{user}}
+git add -f
+phpcs {{path/to/directory}} --standard {{PSR2|PSR4|PSR5|PSR6|HH_CON|HH_EXT}}
+ddrescue --no-scrape {{/dev/sdX}} {{path/to/image_file}} {{/dev/sdS}}
+asciiart {{http://example.com/image.jpg}}
+fdp -T {{svg}} -o {{path/to/image.svg}} {{path/to/input.gv}}
+cargo build --manifest-path {{path/to/manifest}}
+rc-update add {{service_name}} {{runlevel}}
+cpufreq-aperf -c {{1}}
+pw-cat {{path/to/file.wav}}
+diffstat {{file1}} {{file2}}
+git mv {{old_name}} {{new_name}}
+docker container stop {{container_name}}
+git checkout-index --all --force
+java {{classname}}
+xfce4-screenshooter --fullscreen --window --save {{path/to/screenshot}}
+phpcs {{path/to/directory}} --extensions {{file_extensions}}
+lslocks --pid={{PID}}
+most {{path/to/file}}
+git ls-remote --refs
+gh pr create --web
+sync {{mailbox}}
+ksh -x {{path/to/script.ksh}}
+pv -s {{1000}} {{file1}} {{file2}} {{file3}}
+in2csv {{data.xls}} --sheet {{sheet_name}}
+cheat --version
+mutt -c {{cc@example.com}} "{{Hello world}}"
+mktemp -d
+poweroff --halt
+pdfunite {{*.doc}}
+pio --agent help
+set -a
+btrfs filesystem defragment {{path/to/file}}
+gnome-terminal --command "{{command_with_args}}"
+swapon -L {{label}} {{/dev/sdb1}}
+dune build
+pv -L {{file}}
+wc -c {{file}}
+mocp --scale={{c}} {{path/to/file}}
+jar cf {{filename.jar}} *
+hg add --include {{pattern}}
+squeue --user $(id -u)
+jdupes {{directory1}} {{directory2}}
+p7zip -f {{path/to/compressed.ext}}.7z
+eject -d
+git graft {{feature}}
+maim --window $(slop -n -i) {{path/to/screenshot.png}}
+script -t {{variable}} "{{Hello World!}}"
+emerge -U {{package_name}}
+chfn -o {{new_office_number}} {{username}}
+pio run --target {{target_name}}
+redshift -b {{70}} -l {{40}}
+gpg-zip --symmetric {{path/to/directory}}
+sinfo --list-reasons
+crunch {{abc}}
+rails server
+st-flash erase
+rapper -o {{path/to/output.ttl}} {{path/to/input.rdf}}
+rpcclient --user {{domain}}\{{username}} --no-pass {{bob.example.com}}
+nkf -w {{path/to/file.txt}}
+distccd --daemon
+bastet {{horizontal}}
+numactl --cpunodebind={{1}} --membind={{4}} --cpunodebind={{2}} --membind={{3}} --offset={{0}} --shmid={{-1}} --dump-nodes
+fdisk {{/dev/sdXN}}
+git instaweb --stop
+apt-mark install --version {{1.0}} {{package}}
+gh run view {{workflow_run_number}}
+fish --interactive
+indent --linux-style {{path/to/source.c}} -o {{path/to/indented_source.c}}
+mysqld --console
+git rebase --interactive
+promtool check logs {{config_file.yml}}
+kubectl describe {{pod|service|deployment|ingress|...}} -n {{namespace}}
+apt-add-repository --remove {{repository_spec}}
+rm -i {{\*}}
+playerctl --player {{player_name}} {{command}}
+pacman --sync --refresh --sysupgrade --overwrite {{path/to/file}}
+hg serve
+montage {{image1.png}} {{image2.jpg}} {{imageN.png}} -fave {{path/to/favicon.ico}}
+pio ci --lib {{library1 library2 ...}}
+named {{-f}}
+pi --version
+pio package install
+sudo --login --user $(id -u)
+wget --user-agent "{{user_agent}}" --password "{{password}}" {{http://example.com/filename}}
+arp-scan {{10.0.0.0}}:{{255.255.255.0}}
+john --rules={{mangle}} {{path/to/hashes.txt}}
+coredumpctl info {{path/to/core}} > {{path/to/file}}
+st -n
+gist {{file1 file2 ...}}
+ogr2ogr -l {{input}}.gpkg {{layer_name}}
+gnuplot -e {{path/to/script.plt}}
+sdiff -o {{path/to/merged_file}} {{path/to/file1}} {{path/to/file2}}
+git grep {{search_string}}
+powertop --html
+clamdscan {{path/to/file_or_directory}}
+phploc {{path/to/file}}
+cargo clippy --package {{package}}
+visudo --check
+phpcpd --min-lines {{number_of_lines}} {{path/to/file_or_directory}}
+gh completion
+hg ignore --include {{pattern}}
+lsusb --verbose
+apache2ctl restart
+yacas -f {{script1.ml}} -f {{script2.ml}}
+tcpflow -q
+rdesktop -u {{username}} -p {{password}} -f 1366x768 {{host:port}}
+dotnet ef dbcontext {{context}} {{database}}
+watson undo
+lpstat -u {{user}}
+stat -c "%U %G %O" {{file}}
+shards install
+http_load -partial_matching {{path/to/urls.txt}}
+mpstat {{0}}
+pio team list
+tcptraceroute {{host}} -s {{first_and_max_time}}
+lvdisplay -a
+screenkey --show-settings
+tig {{symbol}}
+openssl genrsa -f {{ed25519}} -h {{100}}
+transmission-create -c "{{comment}}" {{path/to/file_or_directory}}
+losetup -r {{path/to/file}}
+perl -p0e 's/{{find}}/{{replace}}/' -ee {{filename}}
+tox --skip-env {{3.6}}
+maim {{path/to/screenshot.png}}
+amixer -D pulse sset Master {{10%-}}
+qjoypad --update
+git replace --delete {{object}} {{replacement}}
+esbuild --bundle --minify-syntax {{path/to/file.js}}
+php -c
+gv2gxl -o {{output.gxl}} {{input.gv}}
+b2sum -c {{path/to/file}}
+pvdisplay {{/dev/sdXY}}
+7z a -t{{7z|zip|gzip|bzip2|lzip}} {{path/to/archive.7z}} {{path/to/file_or_directory}}
+pio account info
+git status --summary-limit
+pyenv deactivate
+git-mergetool --no-gui
+xsel -b
+pio account update --username {{username}} --password {{password}}
+xar -c {{path/to/directory}}
+du -h {{path/to/directory}}
+realpath {{path/to/file}}
+chcon -r {{role}} {{filename}}
+cp {{path/to/source}} {{path/to/destination}}
+rsync {{path/to/local_file}} {{remote_host}}:{{path/to/remote_file}}
+wg-quick up {{interface}}
+pacstrap -M {{path/to/new/root}} {{packages}}
+edquota --edit-times {{project_name}}
+paccache -r
+sdcv --use-dict {{search_term}}
+wasm2c {{file.wasm}}
+xz -l {{file}}
+kexec -l {{path/to/module}} --initrd={{path/to/initrd}} --command-line={{arguments}}
+hg log
+unexpand -a {{file}}
+dolphin {{path/to/image.ext}}
+printenv | grep -0 {{HOME}}
+units "{{12345}} {{54321}}"
+gh pr merge {{pr_number}}
+hashid {{path/to/file}}
+systemctl status {{unit}}
+java -version
+tomb lock {{encrypted_directory.tomb}} -k {{encrypted_directory.tomb.key}}
+fgrep {{search_string}} {{path/to/file}}
+dillo {{path/to/file_or_directory}}
+gdu --show-disks
+perf {{command}}
+hg commit --message {{message}}
+alpine quit
+gdb --eval-command "{{command1}}" --eval-command "{{command2}}"
+cuyo --version
+git root --relative
+beep -l {{frequency}} -n {{number_of_beeps}}
+filefrag -b {{1024}} {{path/to/files}}
+nl -v {{file}}
+rails db:migrate
+racket {{path/to/script.rkt}}
+pacman --files --list --upgrades {{path/to/file.pkg.tar.zst}}
+history {{-N}}
+gh ssh-key add {{path/to/key.pub}} --title "{{title}}"
+git notes edit [{{existing_note}}]
+meson --buildsystem-files {{path/to/build_dir}} {{path/to/project}} {{version}}
+sk --query "{{query}}"
+wpa_cli scan
+bastet drop
+basename {{path/to/file}}
+gvpack -n {{path/to/layout1.gv}} {{path/to/layout2.gv ...}} > {{path/to/output.gv}}
+nautilus {{path/to/directory}}
+nginx -t
+ln -s {{/path/to/file}} {{path/to/symlink}}
+printenv -0 {{HOME}}
+rclone move {{path/to/source_file_or_directory}} {{remote_name}}:{{path/to/destination_directory}}
+jp2a --colors {{path/to/image.jpeg}}
+git pull --ff
+gunicorn --certfile {{cert.pem}} --keyfile {{key.pem}} {{import.path:app_object}}
+go fmt -n
+xh --headers {{true}} {{httpbin.org/get}}
+dstat --cpu-user --mem-adv --nocolor
+dotnet publish  --outputt {{path/to/output}} {{path/to/project_file}}
+usermod -d {{path/to/home}} {{user}}
+git-column --command "{{command1}}" --command "{{command2}}"
+swapoff -a
+electrum -p socks5:{{127.0.0.1}} -a {{address}} send {{amount}} {{recipient}}
+gzip -c {{file.ext}} > {{file.ext.gz}}
+svn changelist {{changelist_name}} {{path/to/directory1}} {{path/to/directory2}}
+sync {{path/to/block_device1}} {{path/to/block_device2}}
+git browse --upstream
+jwt decode {{jwt_string}}
+fmt -w {{width}} {{path/to/file}}
+mmls -i {{path/to/image_file}}
+mupdf {{filename}}
+obs --startstreaming
+nokogiri {{url|path/to/file}} --rng {{initialisation_file}}
+du -h {{path/to/directory}}
+notify-send -t {{test}} "{{this is a test}}"
+git subtree pull --prefix={{path/to/directory/}} {{repository_url}} {{branch_name}}
+csvcut -c {{2,3}} {{data.csv}}
+asciidoctor --embedded {{path/to/file.adoc}} --require {{asciidoctor-pdf}} --backend {{html}} --embedded-css {{path/to/file.css}}
+parallel -j{{4}} {{command}} ::: {{arg1}} {{arg2}}
+dwebp {{path/to/input.webp}} -o {{path/to/output.png}} -p {{4}}
+rg --max-depth {{2}} --include-zero-depth {{regular_expression}}
+mr checkout --jobs {{5}}
+docker exec --detach {{container_name}} {{cmd.exe}}
+paccache -d -c
+git check-ignore {{path/to/file_or_directory}}
+dconf get {{/example/dconf/path}}
+sort {{file}} | uniq -u
+manpath {{command}}
+diff -W {{old_file}} {{new_file}}
+vnstat -i {{eth0}}
+git alias ^{{search_term}}
+gh completion --version {{bash|fish|zsh|powershell}}
+ipcrm --queue-key {{ipc_queue_key}}
+which {{executable}}
+git ignore {{pattern}}
+squeue -v -i {{5}}
+git reset HEAD~
+ndctl watch {{acpi.nfit}}
+vgs --separator =
+iverilog {{source.v}} -o {{executable}} -I{{path/to/iverilog_lib}}
+ac --all-days --individual-totals
+gh completion --version
+fgrep -v {{search_pattern}} {{path/to/file}}
+dpkg -l {{pattern}}
+bpytop --diff
+git setup {{repository_name}}
+repo-add --quiet {{path/to/database.db.tar.gz}} {{*.pkg.tar.zst}}
+transmission-remote {{hostname}} -w
+clear -V
+nano --softwrap {{path/to/file}}
+ansible-pull -U {{repository_url}} -C {{hosts_file}} -m {{pull}} {{playbook}}
+convert {{image1.png}} {{image2.png}} {{image3.png}} -horizontally {{image123.png}}
+repquota -s
+tail -f {{file}}
+jekyll build
+hwclock --systohc
+chkconfig {{ntpd}} on
+readlink -n {{..}} {{path/to/symlink}}
+ansible-doc --type {{plugin_type}} --list
+shuf --head-count={{1}} --input-range={{0-10}} --repeat
+crontab -e
+dict -i
+emerge --update
+unclutter -idle {{10}}
+optipng -o{{7}} {{path/to/file.png}}
+git mailinfo -m {{message}}
+lwp-request -E -m {{METHOD}} {{http://example.com/some/path}}
+crunch {{1}} {{1}} -w {{STOP}} -i {{path/to/wordlist}}
+lsusb --tree
+pandoc {{input.docx}} --to {{gfm}}
+ansible-doc --list
+gem install {{gemname}}
+csvcut -c {{columns}} {{data.csv}}
+uuid -v {{4}} -o {{path/to/file}}
+bpytop --auto-refresh
+sc-im --autocalc
+llvm-bcanalyzer {{path/to/file.bc}}
+ssh-keygen -t {{dsa|ecdsa|ed25519|rsa}} -b {{2048}}
+gh api --hostname {{hostname}} {{endpoint}}
+direnv edit
+nudoku quit
+print {{filename}}
+mosquitto_sub -t {{sensors/machines/machines/temperature}} -h {{sensors/machines/machines/}}
+nload -u
+surfraw {{elvi}} "{{search_terms}}"
+bzip2 -d {{path/to/compressed_file.bz2}}
+unix2mac -n {{filename}}
+detox -r {{filename}}
+fd --extension {{txt}}
+vagrant ssh-config
+script -h
+ip link show {{ethN}}
+openssl req -x509 -m dns -v {{1.2.3.4}} -s {{example.com}} -d {{/path/to/file.pem}} -o {{/path/to/output.pem}}
+pacman --deptest --help
+kubectl logs --container {{container_name}} {{pod_name}}
+gnome-terminal --tab
+tlp get-config | grep -b power_management
+arithmetic -o {{operation1}} -o {{operation2}}
+gxl2gv -o {{output.gv}} {{input.gxl}}
+git notes append --message="{{message_text}}"
+encfs -f -d {{/path/to/mount_point}}
+rails routes
+gimp --console-messages
+googler {{query}}
+ark --batch {{archive}} {{file}}
+xman -help
+sstat --format={{summary,individual-totals,totals}}
+script -e
+xz {{file}}
+hg push --bookmark {{bookmark}}
+pacman --deptest --help
+git difftool --no-gui --tool-help --no-prompt --gui-user {{username}}
+namei {{path/to/a}} {{path/to/b}} {{path/to/c}}
+pr -l {{format}} {{file1}} {{file2}} {{file3}}
+aptitude upgrade {{package}}
+monop -r:{{path/to/assembly.dll}} --filter-obsolete {{Namespace.Path.To.Type}}
+phpmd {{path/to/file_or_directory}} {{xml|text|html}} {{rulesets}} --strict {{priority_threshold}}
+steamcmd +login {{anonymous}} +app_update {{appid}} +quit
+go test {{./...}}
+git var --nofork
+mysql -u {{user}} --password --database {{database}} --table {{table}} --show-warnings
+info -a {{1}}:{{2}}
+xpdf -z {{1}} {{path/to/file.pdf}}
+elm init
+zmore {{pattern}}<Enter>
+unalias {{word}}
+perl rename 'y/A-Z/a-z/' {{*}}
+pigz -p{{8}} {{filename.ext}}.7z
+pio run --ignore-act {{path/to/project}}
+xz -9 {{file}}
+pandoc --list-output-formats
+nasm {{source.asm}}
+steghide enc --coverfile {{path/to/image.jpg}} --encryption-algorithm {{cbc}} --encryption-key {{path/to/steghide_key}}
+redshift -O {{5700}} -o {{3600}}
+googler -s {{keyword}}
+pio team list --filter {{organization_name}}
+file -f --no-dereference {{filename}}
+mysqld --console
+git checkout .
+glib-compile-resources --generate-dependencies {{file.gresource.xml}} {{target_file}}
+pio run --environment {{environment1}} --environment {{environment2}}
+fakeroot -i {{path/to/file}} {{command}} {{command_arguments}}
+jq --slurpfile {{file.json}}
+git cherry-pick {{commit}}
+poweroff --wtmp-only
+snapper list {{config}}
+sudo homectl set-users-shell {{username}} {{/bin/zsh}}
+st -t {{terminal_title}}
+sftp -l
+gpasswd -r {{user}} {{group}}
+pass otp append {{path/to/pass}} {{issuer}} {{account}}
+alacritty --config-file {{path/to/config.yml}} --live-config-reload
+expand {{~/.zshrc}}
+hg push --rev {{revision}}
+transmission-remote {{hostname}} -a {{torrent|url}}
+dolphin --new-window
+sacctmgr show configuration
+cp -i {{*.txt}} {{path/to/target_directory}}
+wall {{message}} --timeout {{timeout}}
+gh alias set {{subcommand}} {{command}}
+inxi -s
+rm -v {{\*}}
+chcpu -c {{1,7}}
+realpath {{path/to/file_or_directory}}
+hydra -L {{path/to/usernames.txt}} -P {{path/to/wordlist.txt}} -F {{path/to/hydra_file}} {{host:port}}
+couchdb -k
+rfkill status
+bootctl delete-option {{option_name}}
+git init --object-format={{sha256}}
+promtool check rules {{rules_config.yml}}
+hydra -L {{path/to/usernames.txt}} -P {{path/to/wordlist.txt}} {{ssh_command}}
+gh pr create --draft
+ps aux | grep {{pid}} | grep -v grep | xargs -n 1 -I {} echo {}
+docker-compose ps
+ninja -t
+gh browse {{branch}}
+unzip -o {{path/to/file}} {{file.zip}}
+ansible {{group}} --ask-become-pass -m command -a '{{my_command}}'
+racket --help {{path/to/script.rkt}}
+rails db:destroy
+pacman --files --list {{package_name}}
+arecord -f {{cd}} -r {{1000}} -d {{audio_file}}
+srun --pty /bin/bash
+pacman --deptest --help
+mysqld --port {{port}}
+gnucash-cli report {{name}}
+smbclient {{//server/share}} --user {{username}}
+flake8 --show-source {{path/to/directory_or_python_module}}
+git help --all
+go install
+lvcreate -L {{10G}} {{vg1}}
+jp2a --chars {{characters}} {{path/to/image.jpeg}}
+pio info
+pacman --database --check --check
+tar cf {{target.tar.gz}} {{file1}} {{file2}} {{file3}}
+kubectl rollout history {{resource_type}}/{{resource_name}}
+lslogins --system-accs
+git effort {{path/to/directory}}
+git annotate -t {{tag_name}} "{{message}}"
+umount {{/path/to/source}}
+hexdump {{file}}
+transmission-cli --downlimit {{50}} {{url|magnet|path/to/file}}
+assimp list import
+dget {{http://example.com/filename}}
+bastet {{player_name}}
+reptyr {{pid}}
+nethogs {{device1}} {{device2}}
+mysqldump --user {{user}} --password --all-databases > {{path/to/file.sql}}
+coredumpctl list {{path/to/core}}
+git merge {{branch_name}}
+losetup -d
+asciiart --invert-chars {{path/to/image.jpg}}
+fold {{code}}
+wc -c {{file}}
+dmenu -p
+file -s {{filename}}
+scrcpy --serial {{serial_number}} --show-touches
+unix2mac -n {{filename}}
+maim --select {{plugin}} {{path/to/screenshot.png}}
+timeout --signal {{INT}} --kill-after {{3}} {{sleep 10}}
+virt-sysprep --list-operations
+edquota -g {{group}}
+pg_ctl -D {{data_directory}} start
+unexpand -a {{a}} {{b}} {{c}}
+axel -s {{url}}
+gsettings list-recursively {{org.example.schema}}
+dpkg -L {{filename}}
+hdparm -I /dev/{{device}}
+q "SELECT * from {{path/to/file1}} {{path/to/file2}}"
+snapper init
+ffprobe -v error -v info -f default -of default=noprint_wrappers=1:nokey=1 {{input.mp4}}
+jc -p {{file.json}}
+while read line; do {{line}}; done
+git help --all
+bzip2 -d {{path/to/compressed_file.bz2}}
+svgo -o {{path/to/output}} {{path/to/input/*.svg}}
+mkvmerge --sub-charset {{UTF-8}} --sub-charset {{ISO-8859-1}} {{input1.srt}} {{input2.srt}} {{output.mp4}}
+script {{logfile.log}}
+gh help {{pr}} {{create}}
+exit {{exit_code}}
+swig -c -java -o {{path/to/output_wrapper.cpp}} {{path/to/swig_file.i}}
+strings -t x {{file}}
+git commit -m "{{message}}"
+pacman --deptest --help
+vcsh push --exclude-standard {{repository_name}}
+git-contrib --output={{format}}
+pw-record {{path/to/file.wav}}
+parted {{/dev/sdXN}}
+ltrace {{path/to/program}}
+reportbug {{email}}
+zoxide query {{foo}}
+docker build --file {{Dockerfile}} .
+lpass show {{myinbox}} --password {{password_name}}
+gh pr merge --help
+aptitude install {{package}}
+nproc --all
+pdfimages -f {{1}} {{path/to/file.pdf}} {{path/to/output_directory}}
+pdfgrep --ignore-case {{regular_expression}} {{file.pdf}}
+cpulimit --limit {{number_of_threads}} {{path/to/file}}
+aptitude install {{package}}
+xz -d {{file.xz}}
+pvcreate {{/dev/sdb1}}
+dfc -n
+shutdown -h now
+mv {{source}} {{target}}
+kubectl rollout status {{resource_type}}/{{resource_name}}
+g++ {{path/to/source.cpp}} -o {{path/to/output_executable}} -c {{path/to/input_languages}}
+gdb {{executable}}
+iperf -c {{server_address}}
+ip route add default dev {{eth0}} gw {{10.0.0.1}}
+flake8 --show-source {{path/to/file_or_directory}}
+firejail {{path/to/image.desktop}}
+debugfs -d {{/dev/sdXN}} {{/bin/debugfs}}
+cheat -c
+git count-objects --human-readable --verbose
+edquota -u {{username}}
+indent --indent-level3 {{path/to/file.html}}
+etcdctl snapshot save {{path/to/snapshot.db}}
+git root {{repository}}
+transmission-remote {{hostname}} --stop
+emacsclient --eval '({{script.emacsclient}})'
+pacman --files --owns {{filename}}
+timidity --force-keysig {{path/to/file.mid}}
+sha256sum {{path/to/file}}
+screen -S
+httpry -o {{path/to/output.png}} -h {{verb}}
+pygmentize -f html -O "style=color:blue;font-weight:bold;text-decoration:none" {{input_file}}
+pio lib install {{library_name}}
+rm -i {{\*}}
+apt config set {{option}} {{value}}
+asciidoctor --embedded {{path/to/file.adoc}}
+iex -S mix
+influx -host {{host}}
+lynx {{example.com}}
+pycodestyle --show-source {{path/to/file_or_directory}}
+awk '($5 == 1)' {{filename}}
+tshark -d {{eth0}} -p {{http}}
+singularity build {{image.sif}}
+chroma --lexer="{{c++}}" --formatter="{{svg}}" --formatter-options="{{monokai}}" {{source_file}}
+khal list -a {{personal}} {{1000}}
+envsubst -v {{variable}}={{value}}
+gcalcli calm
+ntpq --no-load-opts --command={{rv}}
+git notes list
+pio lib search {{library}}
+zenity --default-cancel
+gh help
+umask {{octal}}
+transmission-cli {{url|magnet|path/to/file}}
+at {{10:00}} -m {{command}}
+elm make
+git credential fill --protocol {{http}}
+git column --mode=column --width={{2}}
+diff3 {{old_file}} {{new_file}}
+eject -f {{/dev/cdrom}}
+cat {{file}} | nl {{options}}
+ar -r {{path/to/file.a}} {{path/to/file1.o}} {{path/to/file2.o}}
+git shortlog -c
+lsattr -d
+psql -h {{host}} -p {{port}} -d {{database}} {{query}}
+noti {{message}}
+sed -r 's/{{regular_expression}}/{{replacement}}/g' {{filename}}
+thunar --quit
+git help --global --help-option
+flac -o {{path/to/output.wav}} {{path/to/file.flac}}
+sdiff {{path/to/file1}} {{path/to/file2}}
+coredumpctl debug {{pid}}
+npm uninstall {{foo}}
+sync {{path/to/directory}}
+pio account add {{username}} {{password}}
+pio test --target {{target_name}}
+fdp -T {{gif}} -O {{path/to/image.gif}} < {{path/to/input.gv}}
+svgo -o {{path/to/output.svg}} {{path/to/input.svg}}
+lvm -v {{/dev/sdX}}
+firejail --list
+git show-index --object-format {{path/to/file}}
+distccd --daemon --allow-private {{ip_address|ip_address_range}}
+arduino-builder -debug-level {{debug|info|warn|error|fatal}}
+qutebrowser --restore {{name}}
+snapper -c {{config}} create {{snapshot_name}} {{description}}
+pacman --deptest --help
+gcc {{source.c}} -o {{executable}} -I{{header_path}} -L{{library_path}} -l{{library_name}}
+ifup -f {{/etc/fstab}}
+perl rename 's/{{foo}}/{{bar}}/' *.pl
+pidof {{bash}}
+btrfs subvolume create {{path/to/new_subvolume}} [{{...}}]
+salt-call state.highstate
+mpv --speed {{10%-}}
+git daemon --verbose
+assimp list
+patch -d {{path/to/file}} < {{patch.diff}}
+pacman --deptest --help
+radeontop --help-utilization
+hashid {{hash1}} {{hash2}}
+hashcat --hash-type {{hash_type_id}} --attack-mode {{1}} --attack-mode {{2}} {{hash_value}} {{dictionary_a}} {{dictionary_b}}
+ac --individual-totals
+sox {{input_audiofile}} {{output_audiofile}} {{2x}}
+ps --help
+openconnect {{vpn.example.org}}
+virtualenvwrapper {{path/to/venv}} {{2.7.10}}
+lzop {{file}}
+cpufreq-info -c
+lsattr -a {{attribute}}
+zoxide query {{foo}}
+xsetwacom list-x11-keymap-devices {{device}}
+john {{path/to/hashes.txt}}
+flash -c
+pactl list-sinks
+bat --default-viewer={{cat}} {{file}}
+eva --mode=khal
+goaccess {{path/to/logfile}}
+7zr x {{path/to/archive.7z}}
+notmuch tag -r {{search_term}}
+sa --user-summary
+zramctl --algorithm {{sha256|sha512|sha384|sha224|sha1|md5|rc4}}
+awk '{s+=$1} END {print s}' {{data.csv}}
+unzip -l {{archive.zip}}
+fdupes -r -i {{directory}}
+cargo doc --open --offline --package {{package}}
+git grep {{glob}}
+shuf --head-count={{10}} --input-range={{1-10}} --repeat
+qpdf --help-file={{path/to/file}} {{path/to/input.pdf}} {{path/to/output.pdf}}
+fdp -T {{svg}} -o {{path/to/image.svg}} {{path/to/input.gv}}
+clang -o {{path/to/output_executable}} -g -c {{path/to/input_source.c}}
+git grep {{search_string}} $(git rev-list --all-matching {{search_string}}
+debsecan --suite {{release_code_name}} --only-fixed
+pdfimages -f {{path/to/file.pdf}}
+msmtp {{to@example.org}}
+unzip -o {{path/to/directory}} {{archive.zip}}
+chfn -u {{username}} {{newname}}
+cargo search {{crate_name}}
+sinfo --summarize-dead
+git whatchanged {{path/to/file_or_directory}}
+mtr -c {{10}} {{host}}
+pdfinfo -m {{filename}}
+play {{audiofile}} 2
+couchdb -d
+mke2fs -C {{/dev/sdb1}}
+knife role edit {{role_name}}
+pacman --query --list
+ctags {{file}}
+aptitude install {{path/to/directory}}
+jupyter lab
+svgo {{test.svg}}
+uuid -v {{4}}
+gpg2 --export-secret-keys --armor {{alice@example.com}}
+nautilus --quit
+w {{user}}
+openssl req -x509 -m {{manual}} -o {{filename.crt}} -days {{365}} -subj "{{/C=XX/CN=foobar}}" -x509 -days {{365}} -x509 -noout -raw_output
+blkid -L
+zsh {{path/to/script.zsh}}
+xclock -brief -field {{digital}}
+gcalcli agenda
+dockerd --host {{host_ip}}
+dc -e "100 k 5 v + 1 p"
+rolldice {{2}}d{{5}}{{3}}
+uncrustify -c {{path/to/file.cfg}} -o -n {{path/to/input_file}}
+deluged -p {{port}}
+eject -q {{/cd}}
+git reset --hard {{HEAD~2}}
+docker-machine status {{name}}
+gsettings list-recursively {{org.example.schema}} {{example-key}}
+mongoexport --uri={{connection_string}} --collection={{collection_name}} --pretty --uri={{output_file}}
+gh help {{subcommand}}
+apt-mark showmanual
+mixxx --developer --safeMode
+qemu-img create -f {{gigabytes}}G {{image_name.img}}
+partx --delete --verbose {{path/to/kernel_file}}
+zoxide query {{'^foo'}}
+batch -f {{path/to/file}}
+codespell --check-filenames
+ntpq --command={{rv}} --peers={{N}}
+fdupes -r {{directory}}
+while read line; do {{line}}; done
+qjoypad {{username}}
+hg serve --port {{port}}
+sensible-browser {{url}}
+p7zip -d {{compressed.ext}}.7z
+setxkbmap -show {{fr}}
+esbuild --bundle --minify-syntax {{path/to/file.jsx}}
+zramctl --size {{2}}
+tshark -w {{path/to/file.pcap}}
+iex -S mix
+nemo --no-default-window
+vimdiff {{window1}} {{window2}}
+git {{command}}
+gh issue list --repo {{owner}}/{{repository}}
+screenkey --show-settings
+opusenc --bitrate {{512}} {{path/to/input.wav}} {{path/to/output}}.opus
+zsh --verbose
+gedit --encoding={{UTF-8}} {{path/to/file}}
+git reauthor --old-email {{old@example.com}} --use-config
+pdfunite {{path/to/file1.pdf}} {{path/to/file2.pdf}} {{path/to/merged_output.pdf}}
+kexec -l
+systemctl status
+dpkg-query -s {{package_name}}
+po4a-updatepo --help-format
+runcon {{user}}_u:{{role}}_r:{{domain}}_t {{command}}
+expr r {{string}} : '\({{substring}}\)'
+nkf -c --overwrite {{path/to/file.txt}}
+dnsrecon --domain {{example.com}} --type axfr
+eject -q {{/dev/sdXN}} {{path/to/file}}
+gdalbuildvrt -hidenodata -vrtnodata -output {{path/to/output.vrt}} {{path/to/directory/*.tif}}
+ansible {{group}} --ask-become-pass -m command -a '{{my_command}}'
+git merge --log={{5}} --no-renames {{path/to/file1}} {{path/to/file2}}
+xprop -list-windows
+pio account logout
+virt-manager --show-domain-editor {{name|id|uuid}}
+git remote remove {{remote_name}}
+base64 {{filename}}
+hashid {{path/to/file}}
+cargo build --release --bin {{name}}
+git rev-parse --abbrev-ref --all
+git merge --edit
+docker exec --detach {{container_name}} {{command}}
+choose {{4}}:{{-1}}
+git rev-parse --show-toplevel {{path/to/directory}}
+lftp -f {{path/to/file_or_directory}}
+tshark -f {{path/to/file}}
+docker-run --rm -v {{path/to/host_path}}:{{path/to/container_path}} {{image}} {{command}}
+cmake --build {{path/to/build_directory}} --config {{Release|Debug|Profile|Coverage}}
+mosh --no-ssh-pty {{username}}@{{host1.example.com}} {{username}}@{{host2.example.com}}
+pacman --query --explicit
+xo {{file1}}.js {{file2}}.js
+pr -f {{path/to/file}}
+hexdump -C {{file}}
+cargo build --bin {{name}}
+django-admin --version
+pio project list
+gpg-tui --help
+playerctl next
+git remote set-url {{remote_name}} {{new_url}}
+csvstat -c {{3}} --max-value-length {{data.csv}}
+snap refresh
+s --provider {{mysql|pgsql|sqlite3|redis|mysql2|pgbench|redis2}} {{query}}
+pacman --upgrades --noconfirm {{path/to/package.pkg.tar.zst}}
+pacstrap -C {{path/to/new/root}} {{path/to/package1}} {{path/to/package2}}
+gunzip {{file.txt.gz}}
