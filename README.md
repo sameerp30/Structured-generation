@@ -1,6 +1,16 @@
-# Structured-generation
-Folder primeqa_data_prepare consists of files that take the descriptions and prepare training triples file named "train_sbert_triples.tsv" (train triples), index file "index_descriptions.tsv" (indexing) and "queries.tsv" (retrieval).. 
+Execution instructions for Colbert: 
+Refer to folder https://github.com/sameerp30/Structured-generation/tree/main/Colbert_files
 
-***primeqa_colbert.py*** file is used for training, indexing, and retrieval steps. File used for training triples is **train_sbert_triples.tsv**, file used for indexing is **index_descriptions.tsv** and for queries (inference) is **queries.tsv**.
 
-All the file-forming instructions are from "https://github.com/primeqa/primeqa/tree/main/primeqa/ir"
+**SBert_top_3.py** - Give the argument of num_negatives in the following format. Python3 <file name> <num_negatives>
+
+**Colbert_train_triple.py** - Give the argument of num_negatives in the following format. Python3 <file name> <num_negatives>
+
+**prepare_index_data.py**
+
+**prepare_train_data.py**
+
+Finally, the training file. 
+**train_colbert.py**: Give path of indexing, query file. 
+
+Give the path of the Colbert-v2 checkpoint (https://downloads.cs.stanford.edu/nlp/data/colbert/colbertv2/colbertv2.0.tar.gz) for the argument checkpoint.
