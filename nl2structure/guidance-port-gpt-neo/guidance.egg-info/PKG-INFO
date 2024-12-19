@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: guidance
+Version: 0.0.57
+Summary: A guidance language for controlling large language models.
+Home-page: https://github.com/slundberg/guidance
+Author: Scott Lundberg and Marco Tulio Ribeiro
+Author-email: scott.lundberg@microsoft.com
+Provides-Extra: docs
+Provides-Extra: test
+License-File: LICENSE
+
+Guidance enables you to control modern language models more effectively and efficiently than traditional prompting or chaining. Guidance programs allow you to interleave generation, prompting, and logical control into a single continuous flow matching how the language model actually processes the text.
