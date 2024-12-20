@@ -1,9 +1,3 @@
-"""
-We let the model generate freely complete answer that includes module name and subsequent structure.
-
-Base (Base model)
-"""
-
 import sys
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -13,10 +7,10 @@ def cnt_spaces_left(text):
 
 
 model = sys.argv[1]
-prompt = sys.argv[2]
-
 tokenizer_base = AutoTokenizer.from_pretrained(model)
 model_base = AutoModelForCausalLM.from_pretrained(model, torch_dtype=torch.float16, device_map="auto")
+
+prompt = sys.argv[2]
 
 
 try:

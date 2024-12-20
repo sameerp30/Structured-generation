@@ -1,9 +1,3 @@
-"""
-We let the model choose from the provided module options and then based on the chosen module we dynamically choose the
-related schema to perform constrained decoding.
-
-Setting = Base (Base model) + IR (module selection) + CD (constrained decoding)
-"""
 import guidance
 import json
 import sys
@@ -17,11 +11,8 @@ def cnt_spaces_left(text):
 model = sys.argv[1]
 model_name = model
 prompt = sys.argv[2]
-modules =sys.argv[3]
+modules = sys.argv[3]
 
-print("model: ", model)
-print("prompt: ", prompt)
-print("modules: ", modules)
 
 tokenizer = AutoTokenizer.from_pretrained(model)
 model_base = AutoModelForCausalLM.from_pretrained(model, torch_dtype=torch.float16, device_map="auto")
@@ -50,6 +41,7 @@ class nl2structure:
         self.token_healing = token_healing
         self.model = guidance.llms.Transformers(model=model_base, tokenizer=self.tokenizer)
         global contents
+
 
 
     def return_required_keys(self, contents):
@@ -86,6 +78,8 @@ class nl2structure:
     def build_template(self, required_keys, optional_keys):
       if self.task == "ansible_yaml":
 
+        # template for ansible is built as all the level 1 keys in select and select in geneach with max_iteration = no. of keys there is gen after every select for value generation 
+        # required_keys, optional_keys = self.return_template_elements()
         max_iter = len(required_keys.keys()) + len(optional_keys)
         guidance_template = """{{#geneach "items" min_iterations=0 max_iterations=""" + str(max_iter) +  """ unique=unique}}{{#select "key" id=id}}"""
         for key in list(required_keys.keys()) + optional_keys[:-1]:
@@ -130,6 +124,7 @@ class nl2structure:
             prog_module = guidance(module_selection_prompt, token_healing=self.token_healing, llm=self.model)
             module_opt = prog_module(module_list=self.reference_module)
 
+
             self.reference_module = guidance.library._select.selected_module
             guidance.library._select.selected_module = None
             guidance.llms.Transformers.cache.clear()
@@ -141,9 +136,11 @@ class nl2structure:
             # regex_pattern = ".*\n    $"                                                                       #for ansible we need regex pattern for level 1 keys. Which is 2 more spaces than module name line
             options_available = {regex_pattern: self.template}
 
+            
       optional_required_nested_keys, optional_optional_nested_keys = self.return_nested_for_optional(contents, optional_keys + list(required_keys.keys()), self.reference_module)
 
       task_details = {"schema_path": self.schema, "task": self.task, "module_name": self.reference_module, "options_available": options_available, "required_keys": required_keys, "optional_keys": optional_keys, "optional_optional_nested_keys": optional_optional_nested_keys, "optional_required_nested_keys": optional_required_nested_keys}
+
       prog1 = guidance(final_prompt, token_healing=self.token_healing, module=self.reference_module, options=options_available, schema=self.schema, task_config=task_details, llm=self.model)
       out = prog1(options_available=options_available, unique=[1], id=1)
       return(str(out))
@@ -163,6 +160,8 @@ guidance.library._geneach.select_generated_id = {}
 guidance.library._geneach.iterator = None
 guidance.library._geneach.cur_iteration = None
 pred_structure = ""
+# prompt = "- name: configure aws s3 account on ibm spectrum"
+# modules = "['ibm.spectrum_virtualize.ibm_sv_manage_awss3_cloudaccount', 'ansible.builtin.file']" 
 obj = nl2structure(schema = "./data_with_ft.jsonl", reference_module = modules, model_class="bigcode/starcoderbase-1b", prompt=prompt, task="ansible_yaml", template=False)
 pred_structure = obj()
 if "{{ge" in pred_structure:
@@ -170,3 +169,4 @@ if "{{ge" in pred_structure:
     pred_structure = pred_structure[:end_ind]
 pred_structure = pred_structure.rstrip()
 print(str(pred_structure))
+print("done")
