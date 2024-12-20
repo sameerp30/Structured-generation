@@ -25,5 +25,5 @@ python base.py "EleutherAI/gpt-neo-2.7B" "- name: configure aws s3 account on ib
 
 ```
 cd guidance_pipeline
-python base_ir_cd.py "EleutherAI/gpt-neo-2.7B" "- name: configure aws s3 account on ibm spectrum" "['ibm.spectrum_virtualize.ibm_sv_manage_awss3_cloudaccount', 'amazon.aws.route53']"
+python base_ir_cd.py "EleutherAI/gpt-neo-2.7B" "- name: configure aws s3 account on ibm spectrum" "['ibm.spectrum_virtualize.ibm_sv_manage_ip_partnership', 'ibm.spectrum_virtualize.ibm_sv_manage_awss3_cloudaccount']"
 ```
