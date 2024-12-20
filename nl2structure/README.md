@@ -8,7 +8,7 @@ pip install -r req.txt
 
 Install guidance port for gpt neo
 ```
-cd guidance-port-gpt-neo
+cd guidance-port-for-gptneo
 pip install -e .
 ```
 
